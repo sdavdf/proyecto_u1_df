@@ -1,21 +1,16 @@
-package com.uce.edu.demo.compania;
+package com.uce.edu.demo.aplicacion;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class Pedido2 {
+public class Pedido3 {
 	
 	private double totalFactura;
 	
-	private Usuario usuario;
-	private Restaurante restaurante;
+	private Usuario usuario;// 3) a su metodo Set le pongo @Autowired
+	private Restaurante restaurante;// 3) a su metodo Set le pongo @Autowired
 	
-	// 2) DI por constructor
-	public Pedido2(Usuario usuario, Restaurante restaurante) {
-		this.usuario = usuario;
-		this.restaurante = restaurante;	
-	}
 	
 	public String ordenar(double totalFactura, String nombreUsuario, String apellidoUsuario, String ubicacionUsuario, int numeroTarjetaCredito,
 			String nombreRestaurant, String direccionRestaurante, String categoriaComida) {
@@ -35,7 +30,7 @@ public class Pedido2 {
 		
 		//Se inserta en la base de datos
 		
-		return "Pedido realizado con exito (DI por constructor)";
+		return "Pedido realizado con exito (DI por métodos SET)";
 	}
 
 
@@ -54,7 +49,7 @@ public class Pedido2 {
 		this.totalFactura = totalFactura;
 	}
 
-
+	@Autowired
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
@@ -64,7 +59,7 @@ public class Pedido2 {
 		return restaurante;
 	}
 
-
+	@Autowired
 	public void setRestaurante(Restaurante restaurante) {
 		this.restaurante = restaurante;
 	}

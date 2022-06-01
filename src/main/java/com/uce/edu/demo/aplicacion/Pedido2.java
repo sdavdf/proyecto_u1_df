@@ -1,19 +1,21 @@
-package com.uce.edu.demo.compania;
+package com.uce.edu.demo.aplicacion;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class Pedido {
+public class Pedido2 {
 	
 	private double totalFactura;
 	
-	@Autowired// 1) para atributos
 	private Usuario usuario;
-	
-	@Autowired// 1) para atributos
 	private Restaurante restaurante;
 	
+	// 2) DI por constructor
+	public Pedido2(Usuario usuario, Restaurante restaurante) {
+		this.usuario = usuario;
+		this.restaurante = restaurante;	
+	}
 	
 	public String ordenar(double totalFactura, String nombreUsuario, String apellidoUsuario, String ubicacionUsuario, int numeroTarjetaCredito,
 			String nombreRestaurant, String direccionRestaurante, String categoriaComida) {
@@ -33,7 +35,7 @@ public class Pedido {
 		
 		//Se inserta en la base de datos
 		
-		return "Pedido realizado con exito (DI por atributos)";
+		return "Pedido realizado con exito (DI por constructor)";
 	}
 
 

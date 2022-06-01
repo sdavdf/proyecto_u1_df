@@ -1,15 +1,18 @@
-package com.uce.edu.demo.compania;
+package com.uce.edu.demo.aplicacion;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class Pedido3 {
+public class Pedido {
 	
 	private double totalFactura;
 	
-	private Usuario usuario;// 3) a su metodo Set le pongo @Autowired
-	private Restaurante restaurante;// 3) a su metodo Set le pongo @Autowired
+	@Autowired// 1) para atributos
+	private Usuario usuario;
+	
+	@Autowired// 1) para atributos
+	private Restaurante restaurante;
 	
 	
 	public String ordenar(double totalFactura, String nombreUsuario, String apellidoUsuario, String ubicacionUsuario, int numeroTarjetaCredito,
@@ -30,7 +33,7 @@ public class Pedido3 {
 		
 		//Se inserta en la base de datos
 		
-		return "Pedido realizado con exito (DI por métodos SET)";
+		return "Pedido realizado con exito (DI por atributos)";
 	}
 
 
@@ -49,7 +52,7 @@ public class Pedido3 {
 		this.totalFactura = totalFactura;
 	}
 
-	@Autowired
+
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
@@ -59,7 +62,7 @@ public class Pedido3 {
 		return restaurante;
 	}
 
-	@Autowired
+
 	public void setRestaurante(Restaurante restaurante) {
 		this.restaurante = restaurante;
 	}

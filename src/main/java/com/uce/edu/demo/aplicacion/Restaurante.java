@@ -1,4 +1,4 @@
-package com.uce.edu.demo.compania;
+package com.uce.edu.demo.aplicacion;
 
 import org.springframework.stereotype.Component;
 

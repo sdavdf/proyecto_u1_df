@@ -7,27 +7,20 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.uce.edu.demo.compania.Pedido;
-import com.uce.edu.demo.compania.Pedido2;
-import com.uce.edu.demo.compania.Pedido3;
+import com.uce.edu.demo.consultorio.CitaMedica;
+import com.uce.edu.demo.consultorio.CitaMedica2;
 
 @SpringBootApplication
 public class ProyectoU1DfApplication implements CommandLineRunner{
 
 	
-//	// 1) DI por atributos
-//	@Autowired
-//	private Pedido pedido;
-	
-//	// 2) Para el DI por constructor
-//	@Autowired
-//	private Pedido2 pedido;
-	
-	// 3) Para el DI por métodos SET
+	// 1) DI por atributo
 	@Autowired
-	private Pedido3 pedido;
+	private CitaMedica cita;
+//	
+//	@Autowired
+//	private CitaMedica2 cita;
 	
-
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoU1DfApplication.class, args);
 	}
@@ -38,7 +31,7 @@ public class ProyectoU1DfApplication implements CommandLineRunner{
 		System.out.println("Mi primer proyecto con Spring Framework");
 		
 		
-		String respuesta = pedido.ordenar(12.75, "Stalyn", "Fueltala", "N.P Llona", 34876653, "Burger King", "Av. Amazonas", "Comida Rápida");
+		String respuesta = cita.agendar(LocalDateTime.now(), "Javier", "Teran", 32, "Quito", "Pepito", 19);
 		System.out.println(respuesta);
 	}
 
