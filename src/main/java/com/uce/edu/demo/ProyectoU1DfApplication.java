@@ -9,17 +9,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.uce.edu.demo.consultorio.CitaMedica;
 import com.uce.edu.demo.consultorio.CitaMedica2;
+import com.uce.edu.demo.modelo.Estudiante;
+import com.uce.edu.demo.service.IEstudianteService;
 
 @SpringBootApplication
 public class ProyectoU1DfApplication implements CommandLineRunner{
-
 	
-	// 1) DI por atributo
 	@Autowired
-	private CitaMedica cita;
-//	
-//	@Autowired
-//	private CitaMedica2 cita;
+	private IEstudianteService estudianteService;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoU1DfApplication.class, args);
@@ -28,11 +25,26 @@ public class ProyectoU1DfApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		System.out.println("Mi primer proyecto con Spring Framework");
+	
+		Estudiante e = new Estudiante();
+		e.setNombre("Edison");
+		e.setApellido("Cayambe");		
+		e.setCedula("1723344567");
+		this.estudianteService.ingresarEstudiante(e);
 		
+		Estudiante e1 = new Estudiante();
+		e1.setNombre("Pepito");
+		e1.setApellido("Perez");		
+		e1.setCedula("0923344567");
+		this.estudianteService.ingresarEstudiante(e1);
 		
-		String respuesta = cita.agendar(LocalDateTime.now(), "Javier", "Teran", 32, "Quito", "Pepito", 19);
-		System.out.println(respuesta);
+		//Usar los 3 métodos restantes
+		e.setCedula("1734525252");
+		this.estudianteService.actualizarEstudiante(e);
+		
+		this.estudianteService.buscarPorApellido("Cayambe");
+		
+		this.estudianteService.borrarEstudiante("0923344567");
 	}
 
 }

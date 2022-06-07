@@ -17,7 +17,9 @@ public class EstudianteRepositoryImpl implements IEstudianteRepository{
 	@Override
 	public Estudiante buscar(String apellido) {
 		System.out.println("Se ha buscado en la base el estudiante: " + apellido);
-		return null;
+		Estudiante e = new Estudiante();
+		e.setApellido(apellido);
+		return e;
 	}
 
 	@Override
