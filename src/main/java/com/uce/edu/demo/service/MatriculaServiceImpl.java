@@ -15,26 +15,26 @@ public class MatriculaServiceImpl implements IMatriculaService{
 	@Override
 	public void ingresarMatricula(Matricula ma) {
 		// TODO Auto-generated method stub
-		this.iMatriculaRepository.insetar(ma);
+		this.iMatriculaRepository.insertarMatricula(ma);
 		
 	}
 
 	@Override
 	public Matricula buscarPorNumero(String numero) {
 		// TODO Auto-generated method stub
-		return this.iMatriculaRepository.buscar(numero);
+		return this.iMatriculaRepository.buscarMatricula(numero);
 	}
 
 	@Override
 	public void actualizarMatricula(Matricula ma) {
 		// TODO Auto-generated method stub
-		this.iMatriculaRepository.actualizar(ma);
+		this.iMatriculaRepository.actualizarMatricula(ma);
 	}
 
 	@Override
 	public void borrarMatricula(String numero) {
 		// TODO Auto-generated method stub
-		this.iMatriculaRepository.eliminar(numero);
+		this.iMatriculaRepository.eliminarMatricula(numero);
 	}
 
 }

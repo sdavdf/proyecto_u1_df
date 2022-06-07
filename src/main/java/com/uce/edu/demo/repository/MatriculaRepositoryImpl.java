@@ -9,26 +9,28 @@ import com.uce.edu.demo.modelo.Matricula;
 public class MatriculaRepositoryImpl implements IMatriculaRepository{
 
 	@Override
-	public void insetar(Matricula ma) {
+	public void insertarMatricula(Matricula ma) {
 		// TODO Auto-generated method stub
 		System.out.println("Se ha insertado en la base la matricula: " + ma);
 	}
 
 	@Override
-	public Matricula buscar(String numero) {
+	public Matricula buscarMatricula(String numero) {
 		// TODO Auto-generated method stub
 		System.out.println("Se ha buscado en la base la matricula: " + numero);
-		return null;
+		Matricula ma = new Matricula();
+		ma.setNumero(numero);
+		return ma;
 	}
 
 	@Override
-	public void actualizar(Matricula ma) {
+	public void actualizarMatricula(Matricula ma) {
 		// TODO Auto-generated method stub
 		System.out.println("Se ha actualizado en la base la matricula: " + ma);
 	}
 
 	@Override
-	public void eliminar(String numero) {
+	public void eliminarMatricula(String numero) {
 		// TODO Auto-generated method stub
 		System.out.println("Se ha eliminado en la base la matricula: " + numero);
 	}

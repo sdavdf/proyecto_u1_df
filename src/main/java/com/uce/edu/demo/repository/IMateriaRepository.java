@@ -5,15 +5,15 @@ import com.uce.edu.demo.modelo.Materia;
 public interface IMateriaRepository {
 	
 		//C: crear/insertar
-		public void insetar(Materia m);
+		public void insertarMateria(Materia m);
 		
 		//R: leer/buscar
-		public Materia buscar(String nombre);
+		public Materia buscarMateria(String nombre);
 		
 		//U: actualizar
-		public void actualizar(Materia m);
+		public void actualizarMateria(Materia m);
 			
 		//D: eliminar
-		public void eliminar(String nombre);
+		public void eliminarMateria(String nombre);
 
 }

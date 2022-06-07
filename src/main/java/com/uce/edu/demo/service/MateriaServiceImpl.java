@@ -15,25 +15,25 @@ public class MateriaServiceImpl implements IMateriaService{
 	@Override
 	public void ingresarMateria(Materia m) {
 		// TODO Auto-generated method stub
-		this.iMateriaRepository.insetar(m);
+		this.iMateriaRepository.insertarMateria(m);
 	}
 
 	@Override
 	public Materia buscarPorNombre(String nombre) {
 		// TODO Auto-generated method stub
-		return this.iMateriaRepository.buscar(nombre);
+		return this.iMateriaRepository.buscarMateria(nombre);
 	}
 
 	@Override
 	public void actualizarMateria(Materia m) {
 		// TODO Auto-generated method stub
-		this.iMateriaRepository.actualizar(m);
+		this.iMateriaRepository.actualizarMateria(m);
 	}
 
 	@Override
 	public void borrarMateria(String nombre) {
 		// TODO Auto-generated method stub
-		this.iMateriaRepository.eliminar(nombre);
+		this.iMateriaRepository.eliminarMateria(nombre);
 	}
 
 }

@@ -5,15 +5,15 @@ import com.uce.edu.demo.modelo.Matricula;
 public interface IMatriculaRepository {
 	
 			//C: crear/insertar
-			public void insetar(Matricula ma);
+			public void insertarMatricula(Matricula ma);
 			
 			//R: leer/buscar
-			public Matricula buscar(String numero);
+			public Matricula buscarMatricula(String numero);
 			
 			//U: actualizar
-			public void actualizar(Matricula ma);
+			public void actualizarMatricula(Matricula ma);
 				
 			//D: eliminar
-			public void eliminar(String numero);
+			public void eliminarMatricula(String numero);
 
 }

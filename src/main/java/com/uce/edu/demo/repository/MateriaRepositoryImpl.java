@@ -8,26 +8,28 @@ import com.uce.edu.demo.modelo.Materia;
 public class MateriaRepositoryImpl implements IMateriaRepository{
 
 	@Override
-	public void insetar(Materia m) {
+	public void insertarMateria(Materia m) {
 		// TODO Auto-generated method stub
-		System.out.println("Se ha creado la mateia:...");
+		System.out.println("Se ha creado la mateia:" + m);
 	}
 
 	@Override
-	public Materia buscar(String nombre) {
+	public Materia buscarMateria(String nombre) {
 		// TODO Auto-generated method stub
 		System.out.println("Se ha buscado en la base la materia: " + nombre);
-		return null;
+		Materia m = new Materia();
+		m.setNombre(nombre);
+		return m;
 	}
 
 	@Override
-	public void actualizar(Materia m) {
+	public void actualizarMateria(Materia m) {
 		// TODO Auto-generated method stub
 		System.out.println("Se ha actualizado en la base la materia: " + m);
 	}
 
 	@Override
-	public void eliminar(String nombre) {
+	public void eliminarMateria(String nombre) {
 		// TODO Auto-generated method stub
 		System.out.println("Se ha eliminado en la base la materia: " + nombre);
 	}
