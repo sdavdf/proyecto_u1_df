@@ -2,11 +2,13 @@ package com.uce.edu.demo.banco.service;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.uce.edu.demo.banco.modelo.CuentaBancaria;
+import com.uce.edu.demo.banco.modelo.Retiro;
 import com.uce.edu.demo.banco.modelo.Transferencia;
 import com.uce.edu.demo.banco.repository.ITransferenciaRepository;
 
@@ -67,6 +69,12 @@ public class TransferenciaServiceImpl implements ITransferenciaService{
 		t.setMontoTransferir(monto);
 		t.setFechaTransferencia(LocalDateTime.now());
 		this.iTransferenciaRepository.actualizar(t);
+	}
+
+	@Override
+	public List<Transferencia> consultar(String cuenta, LocalDateTime fechaInicio, LocalDateTime fechaFin) {
+		// TODO Auto-generated method stub
+		return this.iTransferenciaRepository.consultar(cuenta, fechaInicio, fechaFin);
 	}
 }
 
