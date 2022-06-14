@@ -3,50 +3,51 @@ package com.uce.edu.demo.banco.service;
 import java.math.BigDecimal;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.uce.edu.demo.banco.modelo.CuentaBancaria;
 import com.uce.edu.demo.banco.repository.ICuentaBancariaRepository;
 
 @Service
-public class CuentaBancariaServiceImpl implements ICuentaBancariaService{
+@Qualifier("corriente")
+public class CuentaBancariaCorrienteServiceImpl implements ICuentaBancariaService {
 
-	@Autowired
-	private ICuentaBancariaRepository bancariaRepository;
-	
+
+
 	@Override
 	public void actualizar(CuentaBancaria c) {
 		// TODO Auto-generated method stub
-		this.bancariaRepository.actualizar(c);
-		
+
 	}
 
 	@Override
 	public CuentaBancaria buscar(String numero) {
 		// TODO Auto-generated method stub
-		return this.bancariaRepository.buscar(numero);
-	}
-	
-
-	@Override
-	public void borrar(String numero) {
-		this.bancariaRepository.eliminar(numero);
-
+		return null;
 	}
 
 	@Override
 	public void insertarCuenta(CuentaBancaria c) {
-		this.bancariaRepository.insertar(c);
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void borrar(String numero) {
+		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public BigDecimal calcularInteres(String numeroCta, BigDecimal saldo) {
 		// TODO Auto-generated method stub
-		CuentaBancaria cta = this.bancariaRepository.buscar(numeroCta);
-		return null;
+		// Codigo suplicado lo solucionamos con una fachada, gestor
+		// CuentaBancaria cta = this.bancariaRepository.buscar(numeroCta);
+//		BigDecimal saldo = null;
+		BigDecimal interes = saldo.multiply(new BigDecimal(15)).divide(new BigDecimal(100));
+
+		return interes;
 	}
-	
 
 }
