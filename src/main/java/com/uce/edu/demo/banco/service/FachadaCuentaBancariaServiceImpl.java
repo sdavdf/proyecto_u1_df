@@ -19,6 +19,10 @@ public class FachadaCuentaBancariaServiceImpl implements IFachadaCuentaBancaria{
 	@Autowired
 	@Qualifier("ahorros")
 	private ICuentaBancariaService bancariaServiceA;
+	
+	@Autowired
+	@Qualifier("ahorrosFuturo")
+	private ICuentaBancariaService bancariaServiceB;
 
 	@Autowired
 	private ICuentaBancariaRepository bancariaRepository;
@@ -31,9 +35,12 @@ public class FachadaCuentaBancariaServiceImpl implements IFachadaCuentaBancaria{
 		if(cta.getTipo().equals("A")) {
 			//Ahorros
 			interes = this.bancariaService.calcularInteres(numeroCta, cta.getSaldo());
-		}else {
+		}if(cta.getTipo().equals("C")) {
 			//Corriente
 			interes = this.bancariaServiceA.calcularInteres(numeroCta, cta.getSaldo());
+		}if(cta.getTipo().equals("F")) {
+			//Ahorro futuro
+			interes = this.bancariaServiceB.calcularInteres(numeroCta, cta.getSaldo());
 		}
 		return interes;
 	}
