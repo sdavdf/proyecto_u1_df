@@ -1,4 +1,4 @@
-package com.uce.edu.demo.aplicacion;
+package com.uce.edu.demo.aplicacion.modelo;
 
 import org.springframework.stereotype.Component;
 
@@ -35,7 +35,13 @@ public class Usuario {
 	public void setNumeroTarjetaCredito(int numeroTarjetaCredito) {
 		this.numeroTarjetaCredito = numeroTarjetaCredito;
 	}
+	@Override
+	public String toString() {
+		return "Usuario [nombre=" + nombre + ", apellido=" + apellido + ", ubicacion=" + ubicacion
+				+ ", numeroTarjetaCredito=" + numeroTarjetaCredito + "]";
+	}
 
+	
 	
 	
 

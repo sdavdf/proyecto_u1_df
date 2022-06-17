@@ -1,4 +1,4 @@
-package com.uce.edu.demo.aplicacion;
+package com.uce.edu.demo.aplicacion.modelo;
 
 import org.springframework.stereotype.Component;
 
@@ -27,6 +27,11 @@ public class Restaurante {
 	}
 	public void setCategoriaComida(String categoriaComida) {
 		this.categoriaComida = categoriaComida;
+	}
+	@Override
+	public String toString() {
+		return "Restaurante [nombre=" + nombre + ", direccion=" + direccion + ", categoriaComida=" + categoriaComida
+				+ "]";
 	}
 	
 	
